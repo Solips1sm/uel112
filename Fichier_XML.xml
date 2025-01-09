@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding="UTF-8"?> <!-- Anistratenco S. : The XML was validated on : "https://www.w3schools.com/xml/xml_validator.asp" -->
+<cars>
+
+    <car id="0">
+        <subType>Tourism vehicle</subType>
+        <motorType>electric</motorType>
+        <color hex="#FF0000">red</color>
+        <manufacturer>Peugeot</manufacturer>
+        <year>2020</year>
+        <reference value="985624">REF985624</reference>
+        <price value="25000" >25000 €</price> <!-- Anistratenco S. : had doubts about the euro sign being valid but found : "https://www.compart.com/en/unicode/U+20AC" -->
+        <options>
+            <option ref="OCP">
+                <name>Personalized color</name>
+                <price value="700">700 €</price>
+            </option>
+            <option ref="OVE">
+                <name>Electric windows</name>
+                <price value="900">900 €</price>
+            </option>
+            <option ref="OLC">
+                <name>CD reader</name>
+                <price value="200">200 €</price>
+            </option>
+        </options>
+    </car>
+
+    <car id="1">
+        <subType>Utility vehicle</subType>
+        <motorType>thermal</motorType>
+        <color hex="#FFFFFF">white</color>
+        <year>2008</year>
+        <reference value="125478">REF125478</reference>
+        <price value="12000" >12000 €</price>
+        <options>
+            <option ref="OCP">
+                <name>Personalized color</name>
+                <price value="700">700 €</price>
+            </option>
+            <option ref="OVE">
+                <name>Electric windows</name>
+                <price value="900">900 €</price>
+            </option>
+        </options>
+    </car>
+
+</cars>
