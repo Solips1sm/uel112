@@ -1,47 +1,55 @@
 <?xml version = "1.0" encoding="UTF-8"?> <!-- Anistratenco S. : The XML was validated on : "https://www.w3schools.com/xml/xml_validator.asp" -->
-<cars>
+<!-- Anistratenco S. : updating the logic to refer to the common definitions of the options and motors as done in the original correction, as well as the cars.
+        I would never personally store the entire catalogue as it is within a "singluar" xml and have all potential instances of motorTypes/options defined within it, because of recurrent R/W operations,
+        and most likely a price mismatch on each ref. option/etc. -->
+<!DOCTYPE base SYSTEM "Fichier_DTD.dtd">
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Fichier_XSD.xsd"> 
 
-    <car id="0">
-        <subType>Tourism vehicle</subType>
-        <motorType>electric</motorType>
-        <color hex="#FF0000">red</color>
-        <manufacturer>Peugeot</manufacturer>
-        <year>2020</year>
-        <reference value="985624">REF985624</reference>
-        <price value="25000" >25000 €</price> <!-- Anistratenco S. : had doubts about the euro sign being valid but found : "https://www.compart.com/en/unicode/U+20AC" -->
-        <options>
-            <option ref="OCP">
-                <name>Personalized color</name>
-                <price value="700">700 €</price>
-            </option>
-            <option ref="OVE">
-                <name>Electric windows</name>
-                <price value="900">900 €</price>
-            </option>
-            <option ref="OLC">
-                <name>CD reader</name>
-                <price value="200">200 €</price>
-            </option>
-        </options>
-    </car>
+    <option_list>
+        <option option_ref = "OCP" value="700">Personalized color</option>
+        <option option_ref = "OEG" value="1000">Guaranteed extension</option>
+        <option option_ref = "OVE" value="900">Electric window</option>
+        <option option_ref = "OLC" value="200">CD reader</option>
+    </option_list>
 
-    <car id="1">
-        <subType>Utility vehicle</subType>
-        <motorType>thermal</motorType>
-        <color hex="#FFFFFF">white</color>
-        <year>2008</year>
-        <reference value="125478">REF125478</reference>
-        <price value="12000" >12000 €</price>
-        <options>
-            <option ref="OCP">
-                <name>Personalized color</name>
-                <price value="700">700 €</price>
-            </option>
-            <option ref="OVE">
-                <name>Electric windows</name>
-                <price value="900">900 €</price>
-            </option>
-        </options>
-    </car>
+    <motor_types>
+        <motor motor_ref = "ELEC">Electric</motor>
+        <motor motor_ref = "THER">Thermal</motor>
+        <motor motor_ref = "HYBR">Hybrid</motor>
+    </motor_types>
 
-</cars>
+    <cars> 
+
+        <car id="0">
+            <subType>Tourism</subType>
+            <car_motor motor_ref ="ELEC"></car_motor>
+            <color hex="#FF0000">red</color>
+            <manufacturer>Peugeot</manufacturer>
+            <year>2020</year>
+            <reference value="985624">REF985624</reference>
+            <price value="25000">25000 €</price> <!-- Anistratenco S. : had doubts about the euro sign being valid but found : "https://www.compart.com/en/unicode/U+20AC" -->
+            <options>
+                <config option_ref="OCP"></config>
+                <config option_ref="OVE"></config>
+                <config option_ref="OLC"></config>
+            </options>
+        </car>
+
+        <car id="1">
+            <subType>Utility</subType>
+            <car_motor motor_ref ="THER"></car_motor>
+            <color hex="#FFFFFF">white</color>
+            <manufacturer>Ford</manufacturer>
+            <year>2008</year>
+            <reference value="125478">REF125478</reference>
+            <price value="12000">12000 €</price>
+            <options>
+                <config option_ref="OCP"></config>
+                <config option_ref="OVE"></config>
+            </options>
+        </car>
+
+    </cars>
+
+</catalog>

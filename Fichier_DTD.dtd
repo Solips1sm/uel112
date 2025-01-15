@@ -1,0 +1,49 @@
+<!-- Anistratenco.S: (used acronym AS) from what it seems some people used xml versioning declaration in some YT guides on top, but the given examples do not mention it
+so I will not bother overcomplicating-->
+<!ELEMENT catalog (option_list, motor_types, cars)>
+
+<!ELEMENT option_list (option+)> <!-- AS : I am really curious how the scope works with the element names...-->
+<!ELEMENT motor_types (motor+)>  <!-- Can I use that name elsewhere..? huh..-->
+<!ELEMENT cars (car*)>  <!-- nullable..? zero or more basically -->
+
+<!ELEMENT option (#PCDATA)> <!--AS: It can be only PCDATA/CDATA..?-->
+<!ATTLIST option
+    option_ref ID #REQUIRED 
+    value CDATA #REQUIRED>
+
+<!ELEMENT motor (#PCDATA)>
+<!ATTLIST motor
+    motor_ref ID #REQUIRED>
+
+<!ELEMENT car (subType, car_motor, color, manufacturer, year, reference, 
+               price, options)>
+<!ATTLIST car 
+    id CDATA #REQUIRED>
+
+<!ELEMENT subType (#PCDATA)>
+
+<!ELEMENT car_motor EMPTY> <!-- changed name - I do not get how that makes any sense given a pre-existing motor. -->
+<!ATTLIST car_motor
+    motor_ref IDREF #REQUIRED>
+
+<!ELEMENT color (#PCDATA)>
+<!ATTLIST color
+    hex CDATA #REQUIRED>
+    
+<!ELEMENT manufacturer (#PCDATA)>
+
+<!ELEMENT year (#PCDATA)>
+
+<!ELEMENT reference (#PCDATA)>
+<!ATTLIST reference
+    value CDATA #REQUIRED>
+
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price 
+    value CDATA #REQUIRED>
+
+<!ELEMENT options (config*)>
+
+<!ELEMENT config EMPTY> <!--AS: contains only the atts -->
+<!ATTLIST config 
+    option_ref IDREF #REQUIRED>
