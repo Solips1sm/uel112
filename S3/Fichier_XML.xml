@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF8"?>
+<?xml-stylesheet type="text/xsl" href="Fichier_XSL.xsl"?>
+<catalogue>
+	<!-- Centralisation des données "options" -->
+	<liste_options>
+		<option reference_option="OCP" prix="700">Couleur personnalisée</option>
+		<option reference_option="OEG" prix="1000">Extension garantie</option>
+		<option reference_option="OVE" prix="900">Vitres électriques</option>
+		<option reference_option="OLC" prix="200">Lecteur CD</option>
+	</liste_options>
+
+	<!-- Centralisation des données "moteur" -->
+	<type_moteur>
+		<moteur reference_moteur="ELEC">Electrique</moteur>
+		<moteur reference_moteur="THER">Thermique</moteur>
+		<moteur reference_moteur="HYBR">Hybride</moteur>
+	</type_moteur>
+
+	<!-- Listing des véhicules du catalogue -->
+	<vehicules>
+
+		<!-- Une voiture -->
+		<vehicule reference_voiture="REF985624" annee="2020">
+			<type>Tourisme</type>
+			<marque>Peugeot</marque>
+			<couleur>Rouge</couleur>
+			<prix>25000</prix>
+			<moteur reference_moteur="ELEC"/>
+			<options_disponibles>
+				<configuration reference_option="OCP"/>
+				<configuration reference_option="OVE"/>
+				<configuration reference_option="OLC"/>
+			</options_disponibles>
+		</vehicule>
+
+		<!-- Une voiture -->
+		<vehicule reference_voiture="REF125478" annee="2008">
+			<type>Utilitaire</type>
+			<marque>Ford</marque>
+			<couleur>Blanc</couleur>
+			<prix>12000</prix>
+			<moteur reference_moteur="THER"/>
+			<options_disponibles>
+				<configuration reference_option="OCP"/>
+				<configuration reference_option="OVE"/>
+			</options_disponibles>
+		</vehicule>
+
+		<!-- Une voiture -->
+		<vehicule reference_voiture="REF785492" annee="2010">
+			<type>Voiturette</type>
+			<marque>Renault</marque>
+			<couleur>Vert</couleur>
+			<prix>9000</prix>
+			<moteur reference_moteur="THER"/>
+			<options_disponibles>
+				<configuration reference_option="OCP"/>
+				<configuration reference_option="OVE"/>
+			</options_disponibles>
+		</vehicule>
+
+	</vehicules>
+</catalogue>

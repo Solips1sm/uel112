@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;700&display=swap');
+
+body {
+    font-family: 'Rethink Sans';
+    /*AS: managed to call the import after https: //fonts.google.com/selection/embed docs. */
+    color: #222;
+    padding: 20px;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00419d;
+}
+
+.car_logo {
+    display: block;
+    margin: 10px auto;
+    width: 60px;
+}
+
+div {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* AS: footer..?*/
+    border-radius: 8px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+    /* AS: in my eyes, makes the most amount of difference*/
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #00419d;
+    color: #fff; /* left border white separators look much better in this layout*/
+    border-bottom: 2px solid #ddd;
+}
+
+tr:nth-child(even) {
+    /* AS: used https: //stackoverflow.com/a/5080787 as reference */
+    background-color: #a7a6c1;
+}
+
+.options th {
+    background-color: #007bff;
+}
+
+
+.secondary th {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.secondaryData td {
+    background-color: #e6ffe6;
+}
+
+img.car_logo {
+    width: 50px;
+    height: auto;
+}
+
+body {
+    background-color: #d4e6ff;
+}
+
+th,
+td {
+    padding: 8px 10px;
+    /* */
+}
+
+.car_logo {
+    width: 40px;
+}
